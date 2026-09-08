@@ -4,10 +4,13 @@ error_reporting(0);
 include_once("config.php");
 if(isset($_POST['submit']))
 {
-$bret=mysqli_query($con,"SELECT * FROM student WHERE email='".$_POST['email']."' and passworde='".md5($_POST['passworde'])."'");
+$email=$_POST['email'];
+$password=md5($_POST['password']);
+$bret=mysqli_query($con,"SELECT * FROM student WHERE email='".$_POST['email']."' and password='".md5($_POST['password'])."'");
 $num=mysqli_fetch_array($bret);
 if($num>0)
 {
+
 $extra="dashboard.php";//
 $_SESSION['login']=$_POST['email'];
 $_SESSION['id']=$num['id'];
@@ -36,11 +39,10 @@ else
         <form class="form" method="post" name="login">
             <h1 class="login-title">Login</h1>
             <input type="text" class="login-input" name="email" placeholder="Email" autofocus="true"/>
-            <input type="password" class="login-input" name="passworde" placeholder="Password"/>
+            <input type="password" class="login-input" name="password" placeholder="Password"/>
             <input type="submit"value="Login" name="submit" class="login-button"/>
             <p class="link"><a href="registration.php">New Registration</a></p>
 </form>
 
 </body>
 </html>
-    
