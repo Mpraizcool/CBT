@@ -18,12 +18,12 @@
     $gender=$_POST['gender'];
     $regno=$_POST['regno'];
     $email=$_POST['email'];
-    $passworde=md5($_POST['surname']);
+    $passworde=md5($_POST['password']);
     $bret=mysqli_query($con,"SELECT * FROM student WHERE email='".$_POST['email']."'");
 $num=mysqli_fetch_array($bret);
-if($num<0)
+if($num<1)
 {
-    $query="INSERT INTO student(surname,othername,class,gender,regno,email,passworde) VALUES ('$surname','$othername','$classe','$gender','$regno','$email','$passworde')";
+    $query="INSERT INTO student(surname,othername,class,gender,regno,email,password) VALUES ('$surname','$othername','$classe','$gender','$regno','$email','$passworde')";
         $result = mysqli_query($con,$query);}
         else{
         echo "<script>alert ('Email already Exists');</script>";
@@ -67,6 +67,7 @@ if($num<0)
 			</div>
             <input type="text" class="login-input" name="regno" placeholder="Admission  Number" required>
             <input type="text" class="login-input" name="email" placeholder="Email Address" required>
+            <input type="password" class="login-input" name="password" placeholder="Password" required>
             <input type="submit" name="submit" value="Register" class="login-button">
             <p class="link"><a href="login.php">Click to Login</a></p>
         </form>
