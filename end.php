@@ -27,11 +27,6 @@ a:hover, a:active {
 </style>
 </head>
 <body>
-    <div class="form">
-        <p>Hey,<?php echo $_SESSION['login']; ?>!</p>
-        <p>You are done with this test.</p>
-        <p><a href="new.php">Write a test</a></p>
-        <p><a href="logout.php">Logout</a></p>
-</div>
+    
 </body>
 </html>
