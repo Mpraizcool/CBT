@@ -3,7 +3,7 @@ define('DB_SERVER','localhost');
 define('DB_USER','id21483893_bv');
 define('DB_PASS' ,'Bright_123');
 define('DB_NAME', 'id21483893_bv');
-$con = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
+$connection = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
 // Check connection
 if (mysqli_connect_errno())
 {
