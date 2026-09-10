@@ -1,2 +1,2 @@
 # CBT
-Simple CBT website 
+Simple CBT website.
